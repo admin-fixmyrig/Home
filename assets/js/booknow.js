@@ -21,6 +21,8 @@ if (response.ok) {
     responseDiv.textContent = "Thank you! Your message has been sent.";
     form.reset();
     } else {
+    const errorData = await response.json();
+    console.log("Formspree error:", errorData);
     responseDiv.textContent = "Oops! There was a problem sending your message.";
     }
  } catch (error) {
