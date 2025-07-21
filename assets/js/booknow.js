@@ -1,4 +1,4 @@
-<script>
+
   const form = document.getElementById('contact-form');
   const responseDiv = document.getElementById('response-message');
   const submitBtn = document.getElementById('submitBtn');
@@ -37,4 +37,3 @@
       responseDiv.textContent = "Network error. Please try again.";
     }
   });
-</script>
