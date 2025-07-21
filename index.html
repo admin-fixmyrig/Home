@@ -86,7 +86,7 @@
               </div>
             </form>
             <ul class="actions">
-              <li><input type="submit" value="Book Now" /></li>
+              <li id="submitBtn"><input type="submit" value="Book Now" /></li>
             </ul>
             <div style="text-align: right">
               <a href="resources.html"><em>Resources</em></a>
@@ -187,7 +187,11 @@
 			responseDiv.textContent = "Network error. Please try again.";
 		}
 	});
-	</script>
+
+	document.getElementById('submitBtn').addEventListener('click', function () {
+    		document.getElementById('contactForm').submit();
+  		});
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
