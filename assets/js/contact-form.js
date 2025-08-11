@@ -33,17 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         responseMessage.style.color = "green";
         responseMessage.textContent =
-          "✅ Thanks for your message! We’ll get back to you soon.";
+          "Thanks for your message! We’ll get back to you soon.";
         form.reset();
       } else {
         responseMessage.style.color = "red";
         responseMessage.textContent =
-          "❌ Oops! Something went wrong. Please try again.";
+          "Oops! Something went wrong. Please try again.";
       }
     } catch (error) {
       responseMessage.style.color = "red";
       responseMessage.textContent =
-        "⚠️ Network error. Please check your connection.";
+        "Network error. Please check your connection.";
     }
 
     // Reset button state
@@ -51,3 +51,4 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.value = "Book Now";
   });
 });
+
