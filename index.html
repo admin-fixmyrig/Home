@@ -12,7 +12,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body class="is-preload">
@@ -62,10 +65,20 @@
         </p>
         <div class="row">
           <div class="col-8 col-12-small">
-            <form id="contact-form" action="https://formspree.io/f/manbqzol" method="POST">
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/manbqzol"
+              method="POST"
+            >
               <div class="row gtr-uniform gtr-50">
                 <div class="col-6 col-12-xsmall">
-                  <input type="text" name="name" id="name" placeholder="Name" />
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Name"
+                    required
+                  />
                 </div>
                 <div class="col-6 col-12-xsmall">
                   <input
@@ -73,6 +86,7 @@
                     name="email"
                     id="email"
                     placeholder="Email"
+                    required
                   />
                 </div>
                 <div class="col-12">
@@ -81,15 +95,31 @@
                     id="message"
                     placeholder="Describe the issue you are facing (include laptop model and any error messages)"
                     rows="4"
+                    required
                   ></textarea>
                 </div>
               </div>
-			  <div id="response-message" style="margin-top: 20px; margin-bottom: 20px; font-weight: bold;"></div>
-            <ul class="actions">
-              <li><input type="submit" id="submitBtn" value="Book Now" /></li>
-            </ul>
+
+              <!-- Honeypot field (hidden from humans) -->
+              <input
+                type="text"
+                name="_gotcha"
+                id="gotcha"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+              />
+
+              <div
+                id="response-message"
+                style="margin-top: 20px; margin-bottom: 20px; font-weight: bold"
+              ></div>
+
+              <ul class="actions">
+                <li><input type="submit" id="submitBtn" value="Book Now" /></li>
+              </ul>
             </form>
-	      <div style="text-align: right">
+            <div style="text-align: right">
               <a href="resources.html"><em>Resources</em></a>
             </div>
           </div>
@@ -141,12 +171,16 @@
             >
           </li>
           <li>
-            <a href="www.linkedin.com/in/fixmyrig-tech-997673370" class="icon brands fa-linkedin"
+            <a
+              href="www.linkedin.com/in/fixmyrig-tech-997673370"
+              class="icon brands fa-linkedin"
               ><span class="label">LinkedIn</span></a
             >
           </li>
           <li>
-            <a href="https://www.youtube.com/@adminfixmyrig" class="icon brands fa-youtube"
+            <a
+              href="https://www.youtube.com/@adminfixmyrig"
+              class="icon brands fa-youtube"
               ><span class="label">YouTube</span></a
             >
           </li>
@@ -160,16 +194,12 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/booknow.js"></script>
+    <script src="assets/js/contact-form.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    
   </body>
 </html>
-
-
-
