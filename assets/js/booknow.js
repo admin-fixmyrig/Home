@@ -1,39 +1,28 @@
 
   const form = document.getElementById('contact-form');
-  const responseDiv = document.getElementById('response-message');
-  const submitBtn = document.getElementById('submitBtn');
+  const responseMessage = document.getElementById('response-message');
 
-  // On button click, dispatch submit event to form
-  submitBtn.addEventListener('click', function () {
-    form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-  });
-
-  // Form submission handler
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault(); // stop default reload
 
     const formData = new FormData(form);
+    const plainFormData = Object.fromEntries(formData.entries());
+    const formDataJson = JSON.stringify(plainFormData);
 
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+    const response = await fetch(form.action, {
+      method: form.method,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: formDataJson
+    });
 
-      const result = await response.json();
-
-      if (response.ok) {
-        responseDiv.textContent = "Thank you! Your message has been sent.";
-        form.reset();
-      } else {
-        console.error("Formspree error:", result);
-        responseDiv.textContent = result.message || "Oops! There was a problem sending your message.";
-      }
-    } catch (error) {
-      console.error("Network error:", error);
-      responseDiv.textContent = "Network error. Please try again.";
+    if (response.ok) {
+      responseMessage.textContent = 'Thanks for your message! We’ll get back to you soon.';
+      form.reset();
+    } else {
+      responseMessage.textContent = 'Oops! Something went wrong. Please try again.';
     }
   });
+
