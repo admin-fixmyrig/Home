@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        responseMessage.style.color = "blue";
+        // Hue 240 is pure blue, vary lightness from 0% (black) to 100% (white)
+        let lightness = 50; // 50% is normal, lower is darker, higher is lighter
+        responseMessage.style.color = 'hsl(240, 100%, ${lightness}%)';
         responseMessage.textContent =
           "Thanks for your message! We’ll get back to you soon.";
         form.reset();
@@ -63,4 +65,5 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.value = "Book Now";
   });
 });
+
 
