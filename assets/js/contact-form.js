@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        responseMessage.style.color = "green";
+        responseMessage.style.color = "blue";
         responseMessage.textContent =
           "Thanks for your message! We’ll get back to you soon.";
         form.reset();
@@ -63,3 +63,4 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.value = "Book Now";
   });
 });
+
